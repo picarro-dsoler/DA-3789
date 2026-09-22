@@ -5,25 +5,20 @@ import sys
 from pathlib import Path
 
 SCRIPT_ROOT = Path(__file__).resolve().parent
-JIRA_TICKETS_ROOT = SCRIPT_ROOT.parent
-WORKSPACE_ROOT = JIRA_TICKETS_ROOT.parent
+REPO_ROOT = SCRIPT_ROOT.parent
 
 
 def _locallib_roots() -> list[Path]:
-    """Return package roots that contain a ``locallib`` package dir.
-
-    Common layouts:
-    - ``<workspace>/packages/locallib``
-    - ``<workspace>/locallib_packages/locallib``
-    """
+    """Return package roots that contain a ``locallib`` package dir."""
     roots: list[Path] = []
     seen: set[Path] = set()
     for candidate in (
-        WORKSPACE_ROOT / "packages",
-        WORKSPACE_ROOT / "locallib_packages",
+        REPO_ROOT / "locallib_packages",
+        REPO_ROOT / "KPIHub",
+        REPO_ROOT / "KPIHubDev",
+        REPO_ROOT / "packages",
+        REPO_ROOT,
         SCRIPT_ROOT,
-        JIRA_TICKETS_ROOT,
-        WORKSPACE_ROOT,
     ):
         resolved = candidate.resolve()
         if resolved in seen:

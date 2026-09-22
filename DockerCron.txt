@@ -1,0 +1,1 @@
+docker run --rm --network host --env-file="$HOME/david-repos/.env" --mount type=bind,source="/home/ubuntu/david-repos",target=/home/sandbox/personal-repos script-automation-image:latest bash -c "pip install -q pyogrio && python /home/sandbox/personal-repos/DA-3789/VehoDailySend.py"

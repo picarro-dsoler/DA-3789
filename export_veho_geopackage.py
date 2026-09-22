@@ -35,7 +35,7 @@ REPORT_COLS = [
 ]
 DEFAULT_RECIPIENTS = [
     'dsoler@picarro.com',
-    # 'Theo@veho-solutions.co.uk',
+    'Theo@veho-solutions.co.uk',
 ]
 LOOKBACK_HOURS = 6
 

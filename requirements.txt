@@ -1,0 +1,9 @@
+# Extra packages not bundled in script-automation-image (install before run).
+pyogrio
+
+# Already present in script-automation-image; listed for local/dev installs.
+geopandas
+pandas
+msal
+requests
+python-dotenv
